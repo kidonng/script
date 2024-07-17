@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "watch": "tsx scripts/watch.ts"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "esbuild": "^0.23.0",
+    "globby": "^14.0.2",
+    "prettier": "^3.3.3",
+    "tsx": "^4.16.2"
+  },
+  "dependencies": {
+    "animation-observer": "^3.0.1",
+    "dom-chef": "^5.1.1",
+    "select-dom": "^9.0.0"
+  }
+}
