@@ -17,6 +17,7 @@ function getCommit(link: HTMLAnchorElement) {
 const linkSelector = ".text-mono a";
 
 observe(".js-wiki-history-revision", (element) => {
+  // TODO: support multiple pages
   const previousLink = $(linkSelector, element.nextElementSibling || undefined);
   const currentLink = $(linkSelector, element);
 
