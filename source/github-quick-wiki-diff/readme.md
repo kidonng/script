@@ -6,3 +6,7 @@
 
 - [Install](https://kidonng-userscript.vercel.app/github-quick-wiki-diff.user.js)
 - [Example](https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS/_history)
+
+## See also
+
+- [Request in Refined GitHub](https://github.com/refined-github/refined-github/issues/7557)
