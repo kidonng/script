@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "tsx scripts/build.ts",
+    "check": "tsc --noEmit",
     "watch": "tsx scripts/watch.ts"
   },
   "type": "module",
@@ -11,7 +12,8 @@
     "execa": "^9.3.0",
     "globby": "^14.0.2",
     "prettier": "^3.3.3",
-    "tsx": "^4.16.2"
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "animation-observer": "^3.0.1",
