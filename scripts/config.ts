@@ -7,11 +7,11 @@ const { stdout: commit } = await execa`git rev-parse HEAD`
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {
-  const content = readFileSync(path, 'utf8')
   return (
-    `${content.slice(0, content.indexOf(delimiter))
-    }// @commit      ${commit}\n${
-    delimiter}`
+    // eslint-disable-next-line prefer-template
+    readFileSync(path, 'utf8').split(delimiter)[0]
+    + `// @commit      ${commit}\n`
+    + delimiter
   )
 }
 

@@ -29,11 +29,10 @@ observe('.js-wiki-history-revision', (element) => {
 
   currentLink.after(
     <div className="mt-2">
-      <a
-        href={location.pathname.replace(
-          '_history',
-          `_compare/${previousCommit}...${currentCommit}`,
-        )}
+      <a href={location.pathname.replace(
+        '_history',
+        `_compare/${previousCommit}...${currentCommit}`,
+      )}
       >
         Previous
       </a>
