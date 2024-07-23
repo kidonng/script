@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "Preserve",
     "target": "ESNext",
-    "strict": true,
-    "jsx": "react"
+    "jsx": "react",
+    "module": "Preserve",
+    "strict": true
   }
 }

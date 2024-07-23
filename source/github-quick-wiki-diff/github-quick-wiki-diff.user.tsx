@@ -6,36 +6,37 @@
 // @match       https://github.com/*
 // ==/UserScript==
 
-import React from "dom-chef";
-import { $ } from "select-dom";
-import { observe } from "animation-observer";
+import React from 'dom-chef'
+import { $ } from 'select-dom'
+import { observe } from 'animation-observer'
 
 function getCommit(link: HTMLAnchorElement) {
-  return link.href.split("/").at(-1);
+  return link.href.split('/').at(-1)
 }
 
-const linkSelector = ".text-mono a";
+const linkSelector = '.text-mono a'
 
-observe(".js-wiki-history-revision", (element) => {
+observe('.js-wiki-history-revision', (element) => {
   // TODO: support multiple pages
-  const previousLink = $(linkSelector, element.nextElementSibling || undefined);
-  const currentLink = $(linkSelector, element);
+  const previousLink = $(linkSelector, element.nextElementSibling || undefined)
+  const currentLink = $(linkSelector, element)
 
-  if (!previousLink || !currentLink) return;
+  if (!previousLink || !currentLink)
+    return
 
-  const previousCommit = getCommit(previousLink);
-  const currentCommit = getCommit(currentLink);
+  const previousCommit = getCommit(previousLink)
+  const currentCommit = getCommit(currentLink)
 
   currentLink.after(
-    <div className={"mt-2"}>
+    <div className="mt-2">
       <a
         href={location.pathname.replace(
-          "_history",
+          '_history',
           `_compare/${previousCommit}...${currentCommit}`,
         )}
       >
         Previous
       </a>
     </div>,
-  );
-});
+  )
+})
