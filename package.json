@@ -5,6 +5,7 @@
     "build": "tsx scripts/build.ts",
     "check": "tsc --noEmit",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "watch": "tsx scripts/watch.ts"
   },
   "dependencies": {

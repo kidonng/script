@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
-import { globbySync } from 'globby'
 import { context } from 'esbuild'
 import { execa } from 'execa'
+import { globbySync } from 'globby'
 
 const { stdout: commit } = await execa`git rev-parse HEAD`
 

@@ -6,9 +6,9 @@
 // @match       https://github.com/*
 // ==/UserScript==
 
+import { observe } from 'animation-observer'
 import React from 'dom-chef'
 import { $ } from 'select-dom'
-import { observe } from 'animation-observer'
 
 function getCommit(link: HTMLAnchorElement) {
   return link.href.split('/').at(-1)
