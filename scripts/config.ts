@@ -3,14 +3,18 @@ import { context } from 'esbuild'
 import exec from 'nanoexec'
 
 const { stdout: commit } = await exec('git', ['rev-parse', 'HEAD'])
+const { stdout: commitCount } = await exec('git', ['rev-list', '--count', 'HEAD'])
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {
   return (
-    // eslint-disable-next-line prefer-template
-    readFileSync(path, 'utf8').split(delimiter)[0]
-    + `// @commit      ${commit}\n`
-    + delimiter
+    readFileSync(path, 'utf8')
+      .split(delimiter)[0]
+      .replace(
+        /(@version.+)/,
+        `$1.${commitCount.toString().trim()}-${commit.toString().slice(0, 7)}`,
+      )
+      + delimiter
   )
 }
 
