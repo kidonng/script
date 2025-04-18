@@ -1,7 +1,6 @@
-import { readFileSync } from 'node:fs'
+import { globSync, readFileSync } from 'node:fs'
 import { context } from 'esbuild'
 import { execa } from 'execa'
-import { globbySync } from 'globby'
 
 const { stdout: commit } = await execa`git rev-parse HEAD`
 
@@ -15,7 +14,7 @@ function getBanner(path: string) {
   )
 }
 
-export const config = globbySync('source/*/*.user.ts{,x}').map(script =>
+export const config = globSync('source/*/*.user.ts{,x}').map(script =>
   context({
     entryPoints: [script],
     bundle: true,
