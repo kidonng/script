@@ -1,8 +1,8 @@
 import { globSync, readFileSync } from 'node:fs'
 import { context } from 'esbuild'
-import { execa } from 'execa'
+import exec from 'nanoexec'
 
-const { stdout: commit } = await execa`git rev-parse HEAD`
+const { stdout: commit } = await exec('git', ['rev-parse', 'HEAD'])
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {
