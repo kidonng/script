@@ -1,4 +1,4 @@
-import { config } from './config'
+import { config } from './config.ts'
 
 for await (const context of config) {
   await context.rebuild()
